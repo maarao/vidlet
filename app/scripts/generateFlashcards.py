@@ -27,6 +27,6 @@ def generate_flashcards(videoDurationInMinutes: int):
         ]
     )
 
-    print(response.choices[0].message.content)
+    return response.choices[0].message.content
 
-generate_flashcards(9)
+print(generate_flashcards(9))
