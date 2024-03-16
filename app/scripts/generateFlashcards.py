@@ -13,8 +13,8 @@ def get_transcript_from_file(filename):
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
         return None
-    
-def generate_flashcards(videoDurationInMinutes: int):
+
+def generate_flashcards(video_duration_in_minutes: int):
     transcript = get_transcript_from_file("transcript/transcript.txt")
 
     response = client.chat.completions.create(
@@ -23,7 +23,7 @@ def generate_flashcards(videoDurationInMinutes: int):
         response_format={ "type": "json_object" },
         messages=[
             {"role": "system", "content": "You are a helpful assistant designed to output JSON."},
-            {"role": "user", "content": "Use this educational video transcript to generate " + str(videoDurationInMinutes) + " flashcards, each flashcard having a term and definition, based on the information described in the video: " + transcript},
+            {"role": "user", "content": "Use this educational video transcript to generate " + str(video_duration_in_minutes) + " flashcards, each flashcard having a term and definition, based on the information described in the video: " + transcript},
         ]
     )
 
