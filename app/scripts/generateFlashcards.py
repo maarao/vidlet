@@ -1,4 +1,3 @@
-import json
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
@@ -29,8 +28,8 @@ def generate_flashcards(video_duration_in_minutes: int):
     )
     
     data = response.choices[0].message.content
-    with open("flashcards/flashcards.json", "w") as outfile:
-        json.dump(data, outfile)
+    with open(os.path.join(os.path.dirname(__file__), "flashcards/flashcards.json"), "w") as outfile:
+        outfile.write(data)
     return True
 
 
