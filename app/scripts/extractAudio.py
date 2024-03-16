@@ -11,7 +11,7 @@ def extract_audio(input_file, output_file):
         .run(overwrite_output=True)
     )
 
-def split_mp3(input_file, output_folder, chunk_size_mb=25):
+def split_mp3(input_file, output_folder, chunk_size_mb=25) -> int:
     # Calculate chunk size in bytes
     chunk_size_bytes = chunk_size_mb * 1024 * 1024
 
@@ -36,11 +36,8 @@ def split_mp3(input_file, output_folder, chunk_size_mb=25):
 
     # Delete the input MP3 file
     os.remove(input_file)
+    return int(duration)
 
-
-
-input_file = "videos/test.mp4"
-output_file = "output.mp3"
-output_folder = "output_chunks"
-extract_audio(input_file, output_file)
-split_mp3(output_file, output_folder)
+def generate_split_audio(input_file):
+    extract_audio(input_file, "output.mp3")
+    return split_mp3("output.mp3", "output_chunks")
