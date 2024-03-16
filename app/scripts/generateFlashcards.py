@@ -1,8 +1,9 @@
-import requests
+import json
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
 load_dotenv()
+
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
 def get_transcript_from_file(filename):
@@ -26,7 +27,11 @@ def generate_flashcards(video_duration_in_minutes: int):
             {"role": "user", "content": "Use this educational video transcript to generate " + str(video_duration_in_minutes) + " flashcards, each flashcard having a term and definition, based on the information described in the video: " + transcript},
         ]
     )
+    
+    data = response.choices[0].message.content
+    with open("flashcards/flashcards.json", "w") as outfile:
+        json.dump(data, outfile)
+    return True
 
-    return response.choices[0].message.content
 
 print(generate_flashcards(9))
