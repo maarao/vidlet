@@ -1,21 +1,40 @@
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
-audio_file = open("output_chunks/chunk_1.mp3", "rb")
-transcription = client.audio.transcriptions.create(
-  model="whisper-1",
-  file=audio_file,
-  response_format="text"
-)
+input_directory = "output_chunks"
+output_directory = "transcript"
 
-# Specify the file path where you want to save the string
-file_path = "transcript/transcript.txt"
+# Create the output directory if it doesn't exist
+os.makedirs(output_directory, exist_ok=True)
 
-# Open the file in write mode ("w"), which will create the file if it doesn't exist or overwrite it if it does
-with open(file_path, "w") as file:
-    # Write the string to the file
-    file.write(transcription)
+# Initialize an empty string to store the concatenated transcriptions
+concatenated_transcription = ""
+
+# Iterate over all MP3 files in the input directory
+for filename in os.listdir(input_directory):
+    if filename.endswith(".mp3"):
+        audio_file_path = os.path.join(input_directory, filename)
+
+        # Transcribe audio
+        transcription = client.audio.transcriptions.create(
+            model="whisper-1",
+            file=open(audio_file_path, "rb"),
+            response_format="text"
+        )
+
+        # Append the transcription to the concatenated transcription
+        concatenated_transcription += transcription
+
+# Specify the file path where you want to save the transcript
+transcript_file_path = os.path.join(output_directory, "transcript.txt")
+
+# Write the concatenated transcription to the transcript file
+with open(transcript_file_path, "w") as transcript_file:
+    transcript_file.write(concatenated_transcription)
+
+print("Transcription saved successfully.")
