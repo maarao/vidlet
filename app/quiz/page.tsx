@@ -60,8 +60,10 @@ export default function QuizPage() {
   return (
     <div>
       <h1>Quiz Page</h1>
-      <div className="flex justify-center">
-      {/* <Question ></Question> */}
+      <div className="">
+        {questions.map((question, index) => (
+          <Question key={index} question={question} />
+        ))}
       </div>
     </div>
   );

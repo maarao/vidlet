@@ -1,26 +1,35 @@
-import { Card } from 'flowbite-react';
+'use client'
+import React, { useState } from 'react';
 
-export default function Question(props) {
-  const {term, correct, answers} = props;
+const Question = ({ question }) => {
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  const handleAnswerClick = (answer) => {
+    if (answer === question.answer) {
+      setSelectedAnswer('Correct!');
+    } else {
+      setSelectedAnswer('Incorrect!');
+    }
+  };
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="bg-gray-100 p-4 rounded shadow-md">
-        <h2 className="text-xl font-bold">{term}</h2>
-      </div>
-      <div className="grid grid-cols-4 gap-4 mt-4">
-        {options.map((option, index) => (
-          <div key={index} className="flex items-center">
-            <input
-              type="radio"
-              id={`answer-${index + 1}`}
-              name="answer"
-              className="w-4 h-4 mr-2"
-            />
-            <label htmlFor={`answer-${index + 1}`}>{option}</label>
-          </div>
+    <div className="text-center mt-8">
+      <h2 className="text-2xl font-bold">{question.question}</h2>
+      <div className="mt-4">
+        {question.possibleAnswers.map((answer, index) => (
+          <button
+            key={index}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 mb-2 rounded"
+            onClick={() => handleAnswerClick(answer)}
+            disabled={selectedAnswer !== null}
+          >
+            {answer}
+          </button>
         ))}
       </div>
+      {selectedAnswer && <p className="mt-4 text-xl">{selectedAnswer}</p>}
     </div>
   );
-}
+};
+
+export default Question;
