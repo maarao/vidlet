@@ -18,17 +18,17 @@ const Generate = () => {
 
     setTimeout(() => {
       setDoneRunning(true);
-    }, 10000);
+    }, 60000);
 
-    // try {
-    //   const response = await axios.post('/api/runPythonScript');
-    //   setScriptOutput(response.data.output);
-    // } catch (error) {
-    //   setScriptError(error.response?.data?.error || 'Error running script');
-    // } finally {
-    //   setIsRunning(false);
-    //   // setDoneRunning(true);
-    // }
+    try {
+      const response = await axios.post('/api/runPythonScript');
+      setScriptOutput(response.data.output);
+    } catch (error) {
+      setScriptError(error.response?.data?.error || 'Error running script');
+    } finally {
+      // setIsRunning(false);
+      // setDoneRunning(true);
+    }
     try {
       const response = await axios.post('/api/runPythonScript');
       setScriptOutput(response.data.output); // Assuming script returns output

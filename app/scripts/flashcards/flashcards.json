@@ -1,120 +1,184 @@
 {
     "flashcards": [
         {
-            "term": "Wormhole",
-            "definition": "A theoretical passage through spacetime that could create shortcuts for long journeys across the universe."
+            "term": "Strep throat",
+            "definition": "A bacterial infection that causes a sore throat and is typically treated with antibiotics."
         },
         {
-            "term": "Black Hole",
-            "definition": "An area in space where gravity pulls so much that even light cannot get out."
+            "term": "Antibiotics",
+            "definition": "Medications designed to terminate prokaryote cells, such as bacteria, without affecting eukaryote cells."
         },
         {
-            "term": "Einstein's theory of relativity",
-            "definition": "A theory proposing a connection between space and time as a unified entity, where the presence of matter and energy can distort spacetime."
+            "term": "Prokaryote cells",
+            "definition": "Cells without a membrane-bound nucleus, found in bacteria."
         },
         {
-            "term": "Elastic space",
-            "definition": "A concept where space can be bent and warped by gravitational forces, similar to a flexible material like a waterbed."
+            "term": "Eukaryote cells",
+            "definition": "Cells with a membrane-bound nucleus, found in organisms like humans."
         },
         {
-            "term": "Traversable wormhole",
-            "definition": "A wormhole that could be crossed allowing travel through spacetime, potentially faster than the speed of light."
+            "term": "Antibiotic resistance",
+            "definition": "The ability of bacteria to survive exposure to antibiotics and continue to grow and reproduce."
         },
         {
-            "term": "General relativity",
-            "definition": "A mathematical theory that describes gravity as the curvature of spacetime, developed by Albert Einstein."
+            "term": "Natural selection",
+            "definition": "The process by which organisms better adapted to their environment tend to survive and produce more offspring."
         },
         {
-            "term": "Einstein-Rosenbridges",
-            "definition": "Theoretical wormholes connecting two separate universes, where one side could resemble a black hole and the other a white hole."
+            "term": "Evolution",
+            "definition": "The change in the inherited characteristics of biological populations over successive generations."
         },
         {
-            "term": "Cosmic strings",
-            "definition": "Hypothetical one-dimensional topological defects in the fabric of spacetime proposed by particle physicists."
+            "term": "Fitness",
+            "definition": "In the biological sense, fitness is determined by an organism's ability to reproduce and pass down its genes to offspring."
         },
         {
-            "term": "Quantum fluctuations",
-            "definition": "Tiny random changes happening in the universe at the smallest scales, influenced by the principles of quantum mechanics."
+            "term": "Allele",
+            "definition": "One of two or more alternative forms of a gene that arise by mutation and are found at the same place on a chromosome."
         },
         {
-            "term": "Exotic matter",
-            "definition": "A theoretical substance with negative mass that could be used to stabilize wormholes against gravitational collapse."
+            "term": "Variety",
+            "definition": "Differences or diversity within a species or population."
         },
         {
-            "term": "Negative mass",
-            "definition": "A hypothetical form of matter that would exhibit repulsive gravitational effects, pushing objects away rather than attracting them."
+            "term": "Predators",
+            "definition": "Organisms that hunt, kill, and consume other organisms for food."
         },
         {
-            "term": "Event horizon",
-            "definition": "The point of no return around a black hole where the gravitational pull becomes so strong that nothing, not even light, can escape."
+            "term": "Darker frogs",
+            "definition": "Frogs with a darker coloration that camouflages them better in their habitat and makes them less visible to predators."
         },
         {
-            "term": "White hole",
-            "definition": "A theoretical region of spacetime where matter, light, and radiation emerge from, considered the opposite of a black hole."
+            "term": "Lighter frogs",
+            "definition": "Frogs with a lighter coloration that makes them more visible to predators in their habitat."
         },
         {
-            "term": "Singularity",
-            "definition": "A point in spacetime where gravitational forces become infinite and space itself is infinitely curved, like the core of a black hole."
+            "term": "Variations and mutations",
+            "definition": "Changes in the genetic material of organisms that can lead to differences in physical traits."
         },
         {
-            "term": "Causal structure",
-            "definition": "The arrangement of cause and effect relationships in spacetime, describing how events are chronologically related."
+            "term": "Adaptation",
+            "definition": "A characteristic or trait that enhances an organism's survival and reproductive success in its environment."
         },
         {
-            "term": "Neutron star",
-            "definition": "A compact star composed almost entirely of neutrons, formed from the remnants of a supernova explosion."
+            "term": "Genes",
+            "definition": "The units of heredity that are passed down from parents to offspring and determine the traits of an organism."
         },
         {
-            "term": "String theory",
-            "definition": "A theoretical framework in physics that suggests fundamental particles are not point-like but rather tiny strings vibrating at different frequencies."
+            "term": "Trait",
+            "definition": "A specific characteristic or feature of an organism, such as its color or behavior."
         },
         {
-            "term": "Exotic matter",
-            "definition": "A theoretical substance with negative mass that could be used to stabilize wormholes against gravitational collapse."
+            "term": "Habitat",
+            "definition": "The natural environment in which an organism lives and obtains its food, water, and shelter."
         },
         {
-            "term": "Vacuum of space",
-            "definition": "The state of space where particles and antiparticles constantly fluctuate in and out of existence due to quantum fluctuations."
+            "term": "Mutations",
+            "definition": "Changes in the DNA sequence that can result in new traits or variations in organisms."
         },
         {
-            "term": "Quantum mechanics",
-            "definition": "The field of physics that describes the behavior of subatomic particles, based on principles of superposition, entanglement, and quantized energy levels."
+            "term": "Positive effect",
+            "definition": "A beneficial impact on an organism's survival and reproduction, leading to the increase in frequency of advantageous traits."
         },
         {
-            "term": "Wormhole hub",
-            "definition": "A central location where multiple wormholes converge, potentially allowing for rapid interstellar travel between different points in the cosmos."
+            "term": "Negative effect",
+            "definition": "A detrimental impact on an organism's survival and reproduction, leading to the decrease or elimination of disadvantageous traits."
         },
         {
-            "term": "Time travel paradoxes",
-            "definition": "Problems or contradictions that arise when attempting to change events in the past or future, leading to inconsistencies in the timeline."
+            "term": "Antibiotic-resistant bacteria",
+            "definition": "Bacteria that have developed the ability to survive exposure to antibiotics due to genetic traits that confer resistance."
         },
         {
-            "term": "Particle physicists",
-            "definition": "Scientists who study the properties and interactions of particles at the subatomic level, often focusing on high-energy particle accelerators."
+            "term": "Bacterial infections",
+            "definition": "Infections caused by bacteria that may require treatment with antibiotics."
         },
         {
-            "term": "Neutrino",
-            "definition": "A type of subatomic particle with extremely low mass and no electric charge, interacting only weakly with other matter."
+            "term": "Environment",
+            "definition": "The surroundings or conditions in which an organism lives and interacts with other organisms."
         },
         {
-            "term": "Spacetime",
-            "definition": "The combined concept of three-dimensional space and one-dimensional time as a single continuum, affected by gravity and motion."
+            "term": "Crossing over",
+            "definition": "The exchange of genetic material between homologous chromosomes during meiosis, leading to genetic variation."
         },
         {
-            "term": "Tachyon",
-            "definition": "A hypothetical particle that travels faster than the speed of light, associated with unstable motion and potential violations of causality."
+            "term": "Evolutionary change",
+            "definition": "Changes in the genetic makeup of populations over time, resulting in new species and adaptations."
         },
         {
-            "term": "Astrophysicists",
-            "definition": "Scientists who study the physical properties and behavior of celestial objects and phenomena in the universe."
+            "term": "Resistant gene",
+            "definition": "A gene that confers resistance to a specific antibiotic and allows bacteria to survive exposure to that antibiotic."
         },
         {
-            "term": "Dark matter",
-            "definition": "An unseen form of matter that does not emit, absorb, or reflect light, inferred to exist based on gravitational effects on visible matter."
+            "term": "Transfer of genes",
+            "definition": "The process by which genetic material is passed from one organism to another, often occurring between bacteria."
         },
         {
-            "term": "Antimatter",
-            "definition": "Particles that have the same mass as their corresponding matter particles but with opposite electric charge, leading to annihilation upon contact."
+            "term": "Hygiene practices",
+            "definition": "Behaviors and procedures that help maintain cleanliness and prevent the spread of infection and diseases."
+        },
+        {
+            "term": "Hospitals",
+            "definition": "Institutions where patients receive medical treatment, including the diagnosis and management of diseases and injuries."
+        },
+        {
+            "term": "Commonly used antibiotics",
+            "definition": "Antibiotics that are frequently prescribed to treat bacterial infections because they are effective against a wide range of bacteria."
+        },
+        {
+            "term": "Vaccines",
+            "definition": "Preventive biological preparations that provide immunity to specific infectious diseases by stimulating the immune system to recognize and fight off pathogens."
+        },
+        {
+            "term": "Resistance issue",
+            "definition": "The problem of bacteria developing resistance to antibiotics, making it more difficult to treat bacterial infections effectively."
+        },
+        {
+            "term": "DTaP vaccine",
+            "definition": "A vaccine that protects against diphtheria, tetanus, and pertussis, three potentially deadly bacterial infections."
+        },
+        {
+            "term": "Variability in bacteria",
+            "definition": "The presence of genetic variation among bacterial populations, leading to different traits and capacities for survival."
+        },
+        {
+            "term": "Enhanced cell wall",
+            "definition": "A thicker or more complex structure that provides greater protection against antibiotics entering bacterial cells."
+        },
+        {
+            "term": "Enzymes",
+            "definition": "Proteins that catalyze chemical reactions, which in the case of bacteria, can help in breaking down antibiotics."
+        },
+        {
+            "term": "Closed environment",
+            "definition": "An environment with limited exposure to external influences and where infections can easily spread among individuals."
+        },
+        {
+            "term": "Selective pressure",
+            "definition": "The environmental factor that exerts pressure on organisms, favoring certain traits or alleles over others through natural selection."
+        },
+        {
+            "term": "New antibiotics",
+            "definition": "Medications developed to target and kill bacteria that have developed resistance to existing antibiotics."
+        },
+        {
+            "term": "Bacterial strains",
+            "definition": "Variants of bacteria that have different genetic characteristics and may exhibit varying levels of resistance to antibiotics."
+        },
+        {
+            "term": "Fitness advantage",
+            "definition": "The increased likelihood of surviving and reproducing due to specific traits that provide an advantage in a given environment."
+        },
+        {
+            "term": "Antibiotics intake",
+            "definition": "The consumption of antibiotics to treat bacterial infections, with the advice to use them only when necessary to avoid promoting antibiotic resistance."
+        },
+        {
+            "term": "Viruses",
+            "definition": "Infectious agents that can replicate only inside the living cells of organisms, requiring antiviral medications rather than antibiotics for treatment."
+        },
+        {
+            "term": "Genetic material",
+            "definition": "The DNA or RNA molecules that carry the genetic information of an organism and determine its traits."
         }
-    ]
+        ]
 }
