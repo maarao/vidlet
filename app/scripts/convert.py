@@ -4,7 +4,7 @@ from whisper import generateTranscript
 from generateFlashcards import generateFlashcards
 
 def main():
-    duration = generateSplitAudio(sys.argv[1])
+    duration = generateSplitAudio("videos/input.mp4")
     generateTranscript()
     return generateFlashcards(duration)
 
