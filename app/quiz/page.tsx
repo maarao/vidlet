@@ -55,7 +55,7 @@ function shuffleArray(array) {
 
 export default function QuizPage() {
   const questions = shuffleArray(generateFlashcardQuestions(getFlashcards()));
-  console.log(questions);
+  // console.log(questions);
 
   return (
     <div>
