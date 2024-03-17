@@ -10,7 +10,7 @@ const Flashcard = ({ term, definition }) => {
   };
 
   return (
-    <div className="w-64 h-48 shadow-md rounded-lg overflow-hidden border border-gray-200 transform transition-transform duration-500 cursor-pointer hover:shadow-lg"
+    <div className="rounded-lg light:bg-gray-100 bg-gray-800 p-8 text-center mt-12 w-[800px] h-[520px] flex flex-col justify-between"
       onClick={handleClick}
     >
       <div className={`w-full h-full flex justify-center items-center text-center font-bold text-lg ${isFlipped ? 'rotate-y-180' : ''}`}>
