@@ -57,6 +57,7 @@ function shuffleArray(array) {
 // Export default component
 export default function QuizPage() {
   const questions = shuffleArray(generateFlashcardQuestions(getFlashcards()));
+  // console.log(questions);
 
   return (
     <div className="flex justify-center">
