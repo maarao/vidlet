@@ -27,10 +27,9 @@ export default function RootLayout({
       <head><ThemeModeScript /></head>
       <body className={inter.className}>
       <Flowbite>
-        <Navbar fluid rounded>
+        <Navbar fluid rounded className="bg-slate-200">
           <Navbar.Brand as={Link} href="#">
-            <img src="/favicon.svg" className="mr-3 h-6 sm:h-9 mt-1" alt="Flowbite React Logo" />
-            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white light:text-black pb-2">Vidlet</span>
+            <img src="/Vidlet.png" className="mr-3 h-6 sm:h-9 mt-1" alt="Vidlet" />
           </Navbar.Brand>
           <Navbar.Toggle />
             <Navbar.Collapse className="pr-3">
