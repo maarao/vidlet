@@ -1,12 +1,14 @@
 import Question from '/app/components/quiz/question';
-import test from 'app/scripts/flashcards/flashcards.json' assert { type: 'json' };
+import { getFlashcards } from "/app/flashcards";
 
 export default function QuizPage() {
-  return (
+  const flashcards = getFlashcards();
+  console.log(flashcards);
+    return (
     <div>
       <h1>Quiz Page</h1>
       <div className="flex justify-center">
-      <Question ></Question>
+      {/* <Question ></Question> */}
       </div>
     </div>
   );
