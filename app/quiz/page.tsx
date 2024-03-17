@@ -6,7 +6,7 @@ export default function QuizPage() {
     <div>
       <h1>Quiz Page</h1>
       <div className="flex justify-center">
-      <Question ></Question>
+      {/* <Question ></Question> */}
       </div>
     </div>
   );
