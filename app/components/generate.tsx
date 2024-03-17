@@ -39,8 +39,8 @@ const Generate = () => {
 
   return (
     <div>
-      <button disabled={isRunning} onClick={handleClick}>
-        {isRunning ? 'Running Script...' : 'Run Python Script'}
+      <button disabled={isRunning} onClick={handleClick} className="font-bold py-3 px-6 mr-2 mb-2 rounded bg-slate-600 hover:bg-slate-700">
+        {isRunning ? 'Generating...' : 'Generate Flashcards'}
       </button>
       {scriptOutput && <p>Script Output: {scriptOutput}</p>}
       {/* {scriptError && <p style={{ color: 'red' }}>Error: {scriptError}</p>} */}

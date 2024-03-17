@@ -31,7 +31,7 @@ export default function Upload() {
   };
 
   return (
-    <div style={{ width:'400px', height:'300px'}}>
+    <div style={{ width:'500px', height:'400px'}}>
       <Label
         htmlFor="dropzone-file"
         className="dark:hover:bg-bray-800 flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
@@ -59,7 +59,7 @@ export default function Upload() {
         </div>
         <FileInput id="dropzone-file" accept="video/*,.srt" className="hidden" onChange={handleFileChange} />
       </Label>
-      <button onClick={handleUpload}>Upload</button>
+      <button className="" onClick={handleUpload}>*</button>
     </div>
   );
 }

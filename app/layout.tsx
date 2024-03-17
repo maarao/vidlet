@@ -34,17 +34,17 @@ export default function RootLayout({
           </Navbar.Brand>
           <Navbar.Toggle />
             <Navbar.Collapse className="pr-3">
-              <Navbar.Link href="#">Home</Navbar.Link>
-              <Navbar.Link href="#">Flashcards</Navbar.Link>
-              <Navbar.Link href="#">Quiz</Navbar.Link>
-              
+              <Navbar.Link href="/">Home</Navbar.Link>
+              <Navbar.Link href="/flashcards">Flashcards</Navbar.Link>
+              <Navbar.Link href="/quiz">Quiz</Navbar.Link>
+
             </Navbar.Collapse>
-          
-          
+
+
         </Navbar>
         {children}
 
-        
+
       </Flowbite>
       </body>
     </html>
