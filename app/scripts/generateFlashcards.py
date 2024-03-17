@@ -31,6 +31,3 @@ def generate_flashcards(video_duration_in_minutes: int):
     with open(os.path.join(os.path.dirname(__file__), "flashcards/flashcards.json"), "w") as outfile:
         outfile.write(data)
     return True
-
-
-print(generate_flashcards(9))

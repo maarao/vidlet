@@ -6,7 +6,7 @@ from generateFlashcards import generate_flashcards
 
 def main():
     os.chdir('app/scripts')
-    duration = generate_split_audio("videos/input.mp4")
+    duration = generate_split_audio("./videos/input.mp4")
     generate_transcript()
     return generate_flashcards(duration)
 
