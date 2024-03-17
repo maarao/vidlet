@@ -15,6 +15,5 @@ export default function FlashcardPage() {
                 </Carousel>
             </div>
         </div>
-        
     )
 }

@@ -1,7 +1,7 @@
 import { spawn } from 'child_process';
 
 export default async function handler(req:any, res:any) {
-  const pythonProcess = spawn('python', ['./app/scripts/convert.py']);
+  const pythonProcess = spawn('python3', ['./app/scripts/convert.py']);
 
   pythonProcess.stdout.on('data', (data) => {
     console.log(`Python Script Output: ${data.toString()}`);
