@@ -15,7 +15,7 @@ const Generate = () => {
     try {
       const response = await axios.post('/api/runPythonScript');
       setScriptOutput(response.data.output); // Assuming script returns output
-    } catch (error) {
+    } catch (error:any) {
       setScriptError(error.response?.data?.error || 'Error running script');
     } finally {
       setIsRunning(false);
