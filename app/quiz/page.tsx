@@ -1,6 +1,8 @@
+// Import necessary dependencies and components
 import Question from '/app/components/quiz/question';
 import { getFlashcards } from "/app/flashcards";
 
+// Function definitions for generating questions and shuffling arrays
 function generateFlashcardQuestions(flashcards) {
   const questions = [];
 
@@ -52,14 +54,13 @@ function shuffleArray(array) {
   return array;
 }
 
-
+// Export default component
 export default function QuizPage() {
   const questions = shuffleArray(generateFlashcardQuestions(getFlashcards()));
   // console.log(questions);
 
   return (
-    <div>
-      <h1>Quiz Page</h1>
+    <div className="flex justify-center">
       <div className="">
         {questions.map((question, index) => (
           <Question key={index} question={question} />
