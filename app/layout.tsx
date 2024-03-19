@@ -25,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head><ThemeModeScript /></head>
-      <body className={inter.className}>
+      <body className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}>
       <Flowbite>
         <Navbar fluid rounded className="bg-slate-900">
           <Navbar.Brand as={Link} href="/">
