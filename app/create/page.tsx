@@ -33,7 +33,18 @@ const Create = () => {
                     <input type="text" value={name} onChange={(e) => {setName(e.target.value)}} />
                 </label>
             </div>
-            
+            <div>
+                <label>
+                    Term:
+                    <input type="text" value={term} onChange={(e) => {setTerm(e.target.value)}} />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Definition:
+                    <input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} />
+                </label>
+            </div>
         </div>
     )
 }
