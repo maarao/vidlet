@@ -6,6 +6,7 @@ import {
     CarouselPrevious,
   } from "@/components/ui/carousel"
   import { Card, CardContent } from "@/components/ui/card"
+  import Flashcard from "./components/flashcard"
 
 
 
@@ -18,9 +19,9 @@ export default function Home() {
                         {Array.from({ length: 5 }).map((_, index) => (
                         <CarouselItem key={index}>
                             <div className="p-1">
-                            <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                <span className="text-4xl font-semibold">{index + 1}</span>
+                            <Card className="size-full">
+                                <CardContent className="flex aspect-square items-center justify-center p-0">
+                                    <Flashcard term="hi" definition="yo"></Flashcard>
                                 </CardContent>
                             </Card>
                             </div>
