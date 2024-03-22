@@ -28,6 +28,10 @@ const Create = () => {
         setFlashcards({...flashcards, name: name});
     }
 
+    const addCard = () => {
+        setFlashcards({...flashcards, cards: [...flashcards.cards, {term: term, definition: definition}]});
+    }
+
     return (
         <div>
             <h1>Add Term and Definition</h1>
