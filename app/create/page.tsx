@@ -24,6 +24,10 @@ const Create = () => {
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
 
+    const addName = () => {
+        setFlashcards({...flashcards, name: name});
+    }
+
     return (
         <div>
             <h1>Add Term and Definition</h1>
