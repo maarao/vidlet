@@ -17,19 +17,36 @@ interface FlashcardSet {
 const Create = () => {
     const [uid, setUid] = useState<number>(Date.now());
 
-    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: uid, name: "Unnamed Set", cards: []});
+    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: uid, name: "", cards: []});
 
-    const [name, setName] = useState<string>("");
+    const [name, setName] = useState<string>("Unnamed Set");
 
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
 
-    const addName = () => {
+    const updateName = () => {
         setFlashcards({...flashcards, name: name});
+        console.log(flashcards);
     }
 
     const addFlashcard = () => {
         setFlashcards({...flashcards, cards: [...flashcards.cards, {term: term, definition: definition}]});
+        setTerm("");
+        setDefinition("");
+    }
+
+    const updateUid = () => {
+        setUid(Date.now());
+        setFlashcards({...flashcards, key: uid});
+    }
+
+    const createFlashcardSet = () => {
+        // updateName();
+        updateUid();
+
+        localStorage.setItem(flashcards.key.toString(), JSON.stringify(flashcards));
+
+        setName("");
     }
 
     return (
@@ -38,7 +55,7 @@ const Create = () => {
             <div>
                 <label>
                     Name:
-                    <input type="text" value={name} onChange={(e) => {setName(e.target.value)}} />
+                    <input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
                 </label>
             </div>
             <div>
@@ -54,6 +71,7 @@ const Create = () => {
                 </label>
             </div>
             <Button onClick={addFlashcard}>Add Flashcard</Button>
+            <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
     )
 }
