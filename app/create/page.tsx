@@ -28,7 +28,7 @@ const Create = () => {
         setFlashcards({...flashcards, name: name});
     }
 
-    const addCard = () => {
+    const addFlashcard = () => {
         setFlashcards({...flashcards, cards: [...flashcards.cards, {term: term, definition: definition}]});
     }
 
@@ -53,6 +53,7 @@ const Create = () => {
                     <input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} />
                 </label>
             </div>
+            <Button onClick={addFlashcard}>Add Flashcard</Button>
         </div>
     )
 }
