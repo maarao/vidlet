@@ -26,10 +26,22 @@ const Create = () => {
         setDefinition("");
     }
 
-    const createFlashcardSet = () => {
+    const updateUid = () => {
         setFlashcards({...flashcards, key: Date.now()});
+    }
+
+    const cleanUp = () => {
+        setFlashcards({key: Date.now(), name: "Unnamed Set", cards: []});
+        setTerm("");
+        setDefinition("");
+    }
+
+    const createFlashcardSet = () => {
+        updateUid();
 
         localStorage.setItem(flashcards.key.toString(), JSON.stringify(flashcards));
+
+        cleanUp();
     }
 
     return (
