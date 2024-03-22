@@ -15,19 +15,10 @@ interface FlashcardSet {
 }
 
 const Create = () => {
-    const [uid, setUid] = useState<number>(Date.now());
-
-    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: uid, name: "", cards: []});
-
-    const [name, setName] = useState<string>("Unnamed Set");
+    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: Date.now(), name: "Unnamed Set", cards: []});
 
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
-
-    const updateName = () => {
-        setFlashcards({...flashcards, name: name});
-        console.log(flashcards);
-    }
 
     const addFlashcard = () => {
         setFlashcards({...flashcards, cards: [...flashcards.cards, {term: term, definition: definition}]});
@@ -35,18 +26,10 @@ const Create = () => {
         setDefinition("");
     }
 
-    const updateUid = () => {
-        setUid(Date.now());
-        setFlashcards({...flashcards, key: uid});
-    }
-
     const createFlashcardSet = () => {
-        // updateName();
-        updateUid();
+        setFlashcards({...flashcards, key: Date.now()});
 
         localStorage.setItem(flashcards.key.toString(), JSON.stringify(flashcards));
-
-        setName("");
     }
 
     return (
