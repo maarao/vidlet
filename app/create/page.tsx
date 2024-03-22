@@ -54,18 +54,6 @@ const Create = () => {
                     <input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
                 </label>
             </div>
-            <div>
-                <label>
-                    Term:
-                    <input type="text" value={term} onChange={(e) => {setTerm(e.target.value)}} />
-                </label>
-            </div>
-            <div>
-                <label>
-                    Definition:
-                    <input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} />
-                </label>
-            </div>
             <Flashcard props={flashcards.cards}></Flashcard>
             <Button onClick={addFlashcard}>Add Flashcard</Button>
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
