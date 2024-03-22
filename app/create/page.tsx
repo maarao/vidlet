@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button"
-import { useState, useEffect } from "react";
+import { Flashcard } from "./components/flashcard";
 
 interface Flashcard {
     term: string;
@@ -65,6 +66,7 @@ const Create = () => {
                     <input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} />
                 </label>
             </div>
+            <Flashcard props={flashcards.cards}></Flashcard>
             <Button onClick={addFlashcard}>Add Flashcard</Button>
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
