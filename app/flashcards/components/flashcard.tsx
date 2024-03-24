@@ -10,7 +10,7 @@ const Flashcard = ({ term, definition }: {term: string, definition:string}) => {
   };
 
   return (
-    <div className="size-full border-8" onClick={handleClick}>
+    <div className="size-full" onClick={handleClick}>
       <div className={`w-full h-full flex justify-center items-center text-center font-bold text-lg ${isFlipped ? 'rotate-y-180' : ''}`}>
         <div className="select-none">
           {isFlipped ? <p>{definition}</p> : <h2>{term}</h2>}

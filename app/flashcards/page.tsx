@@ -1,3 +1,5 @@
+"use client"
+
 import Flashcard from "./components/flashcard"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -21,8 +23,8 @@ import {
 
 export default function Home() {
     return (
-        <div>
-            <div className="flex items-center justify-center h-screen relative">
+        <div className="h-full w-full">
+            <div className="flex items-center justify-center border-8 border-red-50 h-full w-full">
                 <Select>
                     <SelectTrigger className="w-[180px] absolute z-10 top-32">
                         <SelectValue placeholder="Select a flashcard set" />
@@ -38,20 +40,22 @@ export default function Home() {
                         </SelectGroup>
                     </SelectContent>
                 </Select>
-                <Carousel className="w-full max-w-xs relative top-16 z-0">
-                    <CarouselContent>
-                        {Array.from({ length: 5 }).map((_, index) => (
-                        <CarouselItem key={index}>
-                            <div className="p-1">
-                            <Card className="size-full">
-                                <CardContent className="flex aspect-square items-center justify-center p-0">
-                                    <Flashcard term="hi" definition="yo"></Flashcard>
-                                </CardContent>
-                            </Card>
-                            </div>
-                        </CarouselItem>
-                        ))}
-                    </CarouselContent>
+                <Carousel className="absolute top-64 z-0 border-8 w-3/5 h-2/5">
+                    <div className="h-full">
+                        <CarouselContent className="h-full border-8 border-black">
+                            {Array.from({ length: 5 }).map((_, index) => (
+                            <CarouselItem className="h-full" key={index}>
+                                <div className="p-1 h-full">
+                                    <Card className="h-full">
+                                        <CardContent className="flex items-center justify-center p-0 h-full">
+                                            <Flashcard term="hi" definition="yo"></Flashcard>
+                                        </CardContent>
+                                    </Card>
+                                </div>
+                            </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </div>
                     <CarouselPrevious />
                     <CarouselNext />
                 </Carousel>
