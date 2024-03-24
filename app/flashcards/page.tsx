@@ -40,7 +40,7 @@ export default function Flashcards() {
                     </SelectGroup>
                 </SelectContent>
             </Select>
-            <Carousel className="absolute top-64 z-0 w-3/5 h-2/5">
+            <Carousel className="absolute top-64 z-0 w-1/2 h-1/2">
                 <CarouselContent className="h-full">
                     {Array.from({ length: 5 }).map((_, index) => (
                     <CarouselItem key={index}>
