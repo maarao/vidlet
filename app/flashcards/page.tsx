@@ -38,7 +38,7 @@ export default function Flashcards() {
      });
 
     return (
-        <div className="flex items-center justify-center border-8 border-red-50 h-full w-full">
+        <div className="flex items-center justify-center h-full w-full">
             <Select onValueChange={handleSelect}>
                 <SelectTrigger className="w-[15%] absolute z-10 top-32">
                     <SelectValue placeholder="Select a flashcard set..." />

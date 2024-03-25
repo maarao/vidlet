@@ -18,10 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-screen h-screen">
-          <Button className="h-[64px]"></Button>
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );
