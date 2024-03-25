@@ -81,9 +81,3 @@ export default function Flashcards() {
         </div>
     )
 }
-
-/*
-{flashcardSetKeys.map((val:string) => (
-                            localStorage.getItem(val)? <SelectItem value={val}>{JSON.parse(localStorage.getItem(val)? localStorage.getItem(val)).name}</SelectItem>
-                        ))}
-                        */
