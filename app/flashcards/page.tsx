@@ -23,6 +23,8 @@ import {
 
 export default function Flashcards() {
 
+    const flashcardSetKeys:string[] = Object.keys(localStorage);
+
     return (
         <div className="flex items-center justify-center border-8 border-red-50 h-full w-full">
             <Select>
@@ -32,11 +34,9 @@ export default function Flashcards() {
                 <SelectContent>
                     <SelectGroup>
                         <SelectLabel>Flashcard Sets</SelectLabel>
-                        <SelectItem value="apple">Apple</SelectItem>
-                        <SelectItem value="banana">Banana</SelectItem>
-                        <SelectItem value="blueberry">Blueberry</SelectItem>
-                        <SelectItem value="grapes">Grapes</SelectItem>
-                        <SelectItem value="pineapple">Pineapple</SelectItem>
+                        {flashcardSetKeys.map((val:string) => (
+                            <SelectItem value={val}>{JSON.parse(localStorage.getItem(val)!).name}</SelectItem>
+                        ))}
                     </SelectGroup>
                 </SelectContent>
             </Select>
@@ -45,7 +45,7 @@ export default function Flashcards() {
                     {Array.from({ length: 5 }).map((_, index) => (
                     <CarouselItem key={index}>
                         <div className="p-1 h-full">
-                            <Card className="h-full">
+                            <Card className="h-full cursor-pointer">
                                 <CardContent className="flex items-center justify-center align-middle p-0 min-h-full h-full">
                                     <Flashcard term="hi" definition="yo"></Flashcard>
                                 </CardContent>
@@ -60,3 +60,9 @@ export default function Flashcards() {
         </div>
     )
 }
+
+/*
+{flashcardSetKeys.map((val:string) => (
+                            localStorage.getItem(val)? <SelectItem value={val}>{JSON.parse(localStorage.getItem(val)? localStorage.getItem(val)).name}</SelectItem>
+                        ))}
+                        */
