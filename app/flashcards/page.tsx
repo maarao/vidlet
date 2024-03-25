@@ -27,6 +27,7 @@ export default function Flashcards() {
     const flashcardSetKeys:string[] = [];
 
     const [selectedSet, setSelectedSet] = useState<string>("");
+    const [showCarousel, setShowCarousel] = useState<boolean>(true);
 
     const handleSelect = (value: string) => {
 
@@ -35,11 +36,16 @@ export default function Flashcards() {
 
     Object.keys(localStorage).forEach(function(key){
         if (!isNaN(+key)) flashcardSetKeys.push(key);
-     });
+    });
+    
+    const handleShowCarousel = (value: boolean) => {
+
+        setShowCarousel(!value);
+    }
 
     return (
         <div className="flex items-center justify-center h-full w-full">
-            <Select onValueChange={handleSelect}>
+            <Select onValueChange={handleSelect} onOpenChange={handleShowCarousel}>
                 <SelectTrigger className="w-[15%] absolute z-10 top-32">
                     <SelectValue placeholder="Select a flashcard set..." />
                 </SelectTrigger>
@@ -52,7 +58,7 @@ export default function Flashcards() {
                     </SelectGroup>
                 </SelectContent>
             </Select>
-            {selectedSet != "" ?
+            {selectedSet != "" && showCarousel ?
             <Carousel className="absolute top-64 z-0 w-1/2 h-1/2" opts={{startIndex: 0}}>
                 <CarouselContent className="h-full">
                     {JSON.parse(localStorage.getItem(selectedSet)!).cards.map((card:{term:string, definition:string}) => (
