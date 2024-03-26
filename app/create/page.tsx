@@ -11,12 +11,13 @@ interface Flashcard {
 
 interface FlashcardSet {
     key: number;
+    version: number;
     name: string;
     cards: Flashcard[];
 }
 
 const Create = () => {
-    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: Date.now(), name: "Unnamed Set", cards: []});
+    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: Date.now(), version: 1.0, name: "Unnamed Set", cards: []});
 
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
