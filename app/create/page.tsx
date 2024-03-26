@@ -41,7 +41,7 @@ const Create = () => {
     const createFlashcardSet = () => {
         updateUid();
 
-        localStorage.setItem(flashcards.key.toString(), JSON.stringify(flashcards));
+        localStorage.setItem("study-set-" + flashcards.key.toString(), JSON.stringify(flashcards));
 
         cleanUp();
     }
