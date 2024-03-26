@@ -25,14 +25,18 @@ const Create = () => {
         cards: []
     });
 
+    const [numFlashcards, setNumFlashcards] = useState<number[]>([0]);
+
+    const handleNumFlashcards = () => {
+        setNumFlashcards([...numFlashcards, numFlashcards.length]);
+    }
+
     const updateUid = () => {
         setFlashcards({ ...flashcards, key: Date.now() });
     }
 
     const cleanUp = () => {
-        setFlashcards({key: Date.now(), name: "Unnamed Set", cards: []});
-        setTerm("");
-        setDefinition("");
+        setFlashcards({key: Date.now(), version: flashcards.version, name: "Unnamed Set", cards: []});
     }
 
     const createFlashcardSet = () => {
@@ -54,10 +58,11 @@ const Create = () => {
                 </label>
             </div>
 
+            {numFlashcards.map((num) => (
+                <Flashcard flashcards={flashcards} index={num} key={num} />
+            ))}
 
-
-            <Flashcard flashcards={flashcards} />
-
+            <Button onClick={handleNumFlashcards}>Add Another Flashcard</Button>
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
     )
