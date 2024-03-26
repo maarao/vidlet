@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const Flashcard = (props: { flashcards, index }) => {
     const [term, setTerm] = useState<string>("");
@@ -13,17 +14,13 @@ const Flashcard = (props: { flashcards, index }) => {
 
     return (
         <div>
-            <div>
-                <label>
-                    Term:
-                    <Input type="text" value={term} onChange={(e) => {setTerm(e.target.value)}} onBlur={addFlashcard} />
-                </label>
-            </div>
-            <div>
-                <label>
-                    Definition:
-                    <Input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} onBlur={addFlashcard} />
-                </label>
+            <div className="flex flex-row">
+                <div className="basis-1/2 mr-10">
+                    <Textarea value={term} onChange={(e) => {setTerm(e.target.value)}} onBlur={addFlashcard} />
+                </div>
+                <div className="basis-1/2 ml-10">
+                    <Textarea value={definition} onChange={(e) => {setDefinition(e.target.value)}} onBlur={addFlashcard} />
+                </div>
             </div>
         </div>
     )

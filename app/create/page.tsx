@@ -50,21 +50,25 @@ const Create = () => {
     }
 
     return (
-        <div>
-            <h1>Add Term and Definition</h1>
-
+        <div className="max-w-6xl mx-auto">
             <div>
-                <label>
-                    Name:
-                    <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
-                </label>
+                <label>Name:</label>
+                <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
+            </div>
+            <div className="flex flex-row pt-5 pb-2 text-center">
+                <div className="basis-1/2 mr-10">Term</div>
+                <div className="basis-1/2 ml-10">Definition</div>
             </div>
 
             {numFlashcards.map((num) => (
-                <Flashcard flashcards={flashcards} index={num} key={num} />
+                <div className="pb-4" key={num}>
+                    <Flashcard flashcards={flashcards} index={num} />
+                </div>
             ))}
 
+            <div className="flex justify-center">
             <Button onClick={handleNumFlashcards}>Add Another Flashcard</Button>
+            </div>
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
     )
