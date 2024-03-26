@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Flashcard } from "./components/flashcard";
 
@@ -36,7 +36,9 @@ const Create = () => {
     }
 
     const cleanUp = () => {
-        setFlashcards({key: Date.now(), version: flashcards.version, name: "Unnamed Set", cards: []});
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
     }
 
     const createFlashcardSet = () => {
