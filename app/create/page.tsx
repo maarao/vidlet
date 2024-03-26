@@ -1,7 +1,9 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Flashcard } from "./components/flashcard";
 
 interface Flashcard {
     term: string;
@@ -10,50 +12,63 @@ interface Flashcard {
 
 interface FlashcardSet {
     key: number;
+    version: number;
     name: string;
     cards: Flashcard[];
 }
 
 const Create = () => {
-    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: Date.now(), name: "Unnamed Set", cards: []});
+    const [flashcards, setFlashcards] = useState<FlashcardSet>({
+        key: Date.now(),
+        version: 1.0,
+        name: "Unnamed Set",
+        cards: []
+    });
 
-    const [term, setTerm] = useState<string>("");
-    const [definition, setDefinition] = useState<string>("");
+    const [numFlashcards, setNumFlashcards] = useState<number[]>([0]);
 
-    const addFlashcard = () => {
-        setFlashcards({...flashcards, cards: [...flashcards.cards, {term: term, definition: definition}]});
-        setTerm("");
-        setDefinition("");
+    const handleNumFlashcards = () => {
+        setNumFlashcards([...numFlashcards, numFlashcards.length]);
+    }
+
+    const updateUid = () => {
+        setFlashcards({ ...flashcards, key: Date.now() });
+    }
+
+    const cleanUp = () => {
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
     }
 
     const createFlashcardSet = () => {
-        setFlashcards({...flashcards, key: Date.now()});
+        updateUid();
 
-        localStorage.setItem(flashcards.key.toString(), JSON.stringify(flashcards));
+        localStorage.setItem("study-set-" + flashcards.key.toString(), JSON.stringify(flashcards));
+
+        cleanUp();
     }
 
     return (
-        <div>
-            <h1>Add Term and Definition</h1>
+        <div className="max-w-6xl mx-auto">
             <div>
-                <label>
-                    Name:
-                    <input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
-                </label>
+                <label>Name:</label>
+                <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
             </div>
-            <div>
-                <label>
-                    Term:
-                    <input type="text" value={term} onChange={(e) => {setTerm(e.target.value)}} />
-                </label>
+            <div className="flex flex-row pt-5 pb-2 text-center">
+                <div className="basis-1/2 mr-10">Term</div>
+                <div className="basis-1/2 ml-10">Definition</div>
             </div>
-            <div>
-                <label>
-                    Definition:
-                    <input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} />
-                </label>
+
+            {numFlashcards.map((num) => (
+                <div className="pb-4" key={num}>
+                    <Flashcard flashcards={flashcards} index={num} />
+                </div>
+            ))}
+
+            <div className="flex justify-center">
+            <Button onClick={handleNumFlashcards}>Add Another Flashcard</Button>
             </div>
-            <Button onClick={addFlashcard}>Add Flashcard</Button>
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
     )
