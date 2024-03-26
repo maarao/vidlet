@@ -18,10 +18,15 @@ interface FlashcardSet {
 }
 
 const Create = () => {
-    const [flashcards, setFlashcards] = useState<FlashcardSet>({key: Date.now(), version: 1.0, name: "Unnamed Set", cards: []});
+    const [flashcards, setFlashcards] = useState<FlashcardSet>({
+        key: Date.now(),
+        version: 1.0,
+        name: "Unnamed Set",
+        cards: []
+    });
 
     const updateUid = () => {
-        setFlashcards({...flashcards, key: Date.now()});
+        setFlashcards({ ...flashcards, key: Date.now() });
     }
 
     const cleanUp = () => {
@@ -48,6 +53,8 @@ const Create = () => {
                     <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
                 </label>
             </div>
+
+
 
             <Flashcard flashcards={flashcards} />
 
