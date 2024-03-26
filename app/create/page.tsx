@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input";
 import { Flashcard } from "./components/flashcard";
 
 interface Flashcard {
@@ -52,7 +53,7 @@ const Create = () => {
             <div>
                 <label>
                     Name:
-                    <input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
+                    <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
                 </label>
             </div>
             <Flashcard props={flashcards.cards}></Flashcard>
