@@ -20,15 +20,6 @@ interface FlashcardSet {
 const Create = () => {
     const [flashcards, setFlashcards] = useState<FlashcardSet>({key: Date.now(), version: 1.0, name: "Unnamed Set", cards: []});
 
-    const [term, setTerm] = useState<string>("");
-    const [definition, setDefinition] = useState<string>("");
-
-    const addFlashcard = () => {
-        setFlashcards({...flashcards, cards: [...flashcards.cards, {term: term, definition: definition}]});
-        setTerm("");
-        setDefinition("");
-    }
-
     const updateUid = () => {
         setFlashcards({...flashcards, key: Date.now()});
     }
