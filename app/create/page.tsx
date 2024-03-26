@@ -56,8 +56,8 @@ const Create = () => {
                 <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
             </div>
             <div className="flex flex-row pt-5 pb-2 text-center">
-                <div className="basis-1/2">Term</div>
-                <div className="basis-1/2">Definition</div>
+                <div className="basis-1/2 mr-10">Term</div>
+                <div className="basis-1/2 ml-10">Definition</div>
             </div>
 
             {numFlashcards.map((num) => (
@@ -66,7 +66,9 @@ const Create = () => {
                 </div>
             ))}
 
+            <div className="flex justify-center">
             <Button onClick={handleNumFlashcards}>Add Another Flashcard</Button>
+            </div>
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
     )
