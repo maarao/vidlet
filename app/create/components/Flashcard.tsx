@@ -1,15 +1,15 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 
-// TODO: Make this have a unique key so that you can continuously overwrite/delete this specific flashcard
-const Flashcard = (props: [{term: string, definition: string}]) => {
+const Flashcard = (props) => {
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
+    const flashcardIndex = useMemo(() => props.cards.length - 1, [props.cards.length]);
 
     const addFlashcard = () => {
-        props.push({term: term, definition: definition});
+        props.cards[flashcardIndex] = ({term: term, definition: definition});
     }
 
     return (
@@ -17,13 +17,13 @@ const Flashcard = (props: [{term: string, definition: string}]) => {
             <div>
                 <label>
                     Term:
-                    <Input type="text" value={term} onChange={(e) => {setTerm(e.target.value)}} />
+                    <Input type="text" value={term} onChange={(e) => {setTerm(e.target.value)}} onBlur={addFlashcard} />
                 </label>
             </div>
             <div>
                 <label>
                     Definition:
-                    <Input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} />
+                    <Input type="text" value={definition} onChange={(e) => {setDefinition(e.target.value)}} onBlur={addFlashcard} />
                 </label>
             </div>
         </div>

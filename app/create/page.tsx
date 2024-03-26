@@ -50,14 +50,16 @@ const Create = () => {
     return (
         <div>
             <h1>Add Term and Definition</h1>
+
             <div>
                 <label>
                     Name:
                     <Input type="text" value={flashcards.name} onChange={(e) => {setFlashcards({...flashcards, name: e.target.value})}} />
                 </label>
             </div>
-            <Flashcard props={flashcards.cards}></Flashcard>
-            <Button onClick={addFlashcard}>Add Flashcard</Button>
+
+            <Flashcard props={flashcards} />
+
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>
     )
