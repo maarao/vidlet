@@ -58,7 +58,7 @@ const Create = () => {
                 </label>
             </div>
 
-            <Flashcard props={flashcards} />
+            <Flashcard flashcards={flashcards} />
 
             <Button onClick={createFlashcardSet}>Create Flashcard Set</Button>
         </div>

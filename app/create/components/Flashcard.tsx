@@ -3,13 +3,13 @@
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 
-const Flashcard = (props) => {
+const Flashcard = (props: { flashcards }) => {
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
-    const flashcardIndex = useMemo(() => props.cards.length - 1, [props.cards.length]);
+    const flashcardIndex = useMemo(() => props.flashcards.cards.length - 1, [props.flashcards.cards.length]);
 
     const addFlashcard = () => {
-        props.cards[flashcardIndex] = ({term: term, definition: definition});
+        props.flashcards.cards[flashcardIndex] = ({term: term, definition: definition});
     }
 
     return (
