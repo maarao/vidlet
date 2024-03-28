@@ -44,9 +44,15 @@ const Create = () => {
     const createFlashcardSet = () => {
         updateUid();
 
-        localStorage.setItem("study-set-" + flashcards.key.toString(), JSON.stringify(flashcards));
+        localStorage.setItem("study-set-" + flashcards.key.toString(), JSON.stringify({...flashcards, cards: flashcards.cards.filter((card) => card.definition !== "" || card.term !== "")}));
 
         cleanUp();
+    }
+
+    const removeFlashcard = (indexToRemove) => {
+        setNumFlashcards(numFlashcards.filter((_, index) => index !== indexToRemove));
+        const updatedCards = flashcards.cards.filter((_, index) => index !== indexToRemove);
+        setFlashcards({ ...flashcards, cards: updatedCards });
     }
 
     return (
@@ -62,7 +68,7 @@ const Create = () => {
 
             {numFlashcards.map((num) => (
                 <div className="pb-4" key={num}>
-                    <Flashcard flashcards={flashcards} index={num} />
+                    <Flashcard flashcards={flashcards} index={num} numFlashcards={numFlashcards} onDelete={removeFlashcard} />
                 </div>
             ))}
 

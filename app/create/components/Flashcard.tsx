@@ -1,15 +1,19 @@
 'use client'
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
-const Flashcard = (props: { flashcards, index }) => {
+const Flashcard = (props: { flashcards, index, numFlashcards, onDelete }) => {
     const [term, setTerm] = useState<string>("");
     const [definition, setDefinition] = useState<string>("");
 
     const addFlashcard = () => {
         props.flashcards.cards[props.index] = ({term: term, definition: definition});
+    }
+
+    const removeComponent = () => {
+        props.onDelete(props.index);
     }
 
     return (
@@ -22,6 +26,7 @@ const Flashcard = (props: { flashcards, index }) => {
                     <Textarea value={definition} onChange={(e) => {setDefinition(e.target.value)}} onBlur={addFlashcard} />
                 </div>
             </div>
+            <Button onClick={removeComponent}>Delete</Button>
         </div>
     )
 }
